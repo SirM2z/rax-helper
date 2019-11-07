@@ -1,0 +1,225 @@
+{
+  "Text": {
+    "attributes": ["numberOfLines"],
+    "description": "Text 用于显示文本，在 Web 容器中是使用 span 标签实现的，而不是 p 标签。ext 在样式布局中会独占一行，可以通过 Text 嵌套来完成富文本相关的渲染需求。"
+  },
+  "View": {
+    "attributes": ["onLongPress", "onAppear", "onDisappear", "onTouchStart", "onTouchMove", "onTouchEnd", "onTouchCancel"],
+    "description": "View 是最基础的组件，默认为 Flexbox 布局，并且可以任意嵌套。不论在什么容器中，View 都直接对应一个容器的原生视图，比如在 Web 容器中是使用 div 实现的。支持任意自定义属性的透传。"
+  },
+  "TextInput": {
+    "attributes": ["multiline", "accessibilityLabel", "autoComplete", "autoFocus", "onAppear", "editable", "keyboardType", "maxLength", "maxNumberOfLines", "numberOfLines", "placeholder", "password", "secureTextEntry", "value", "defaultValue", "onBlur", "onFocus", "onChange", "onChangeText", "onInput"],
+    "description": "TextInput 是唤起用户键盘的基础组件。当添加 multiline 属性的时候，TextInput 相当于 Web 容器中的 textarea，可以进行多行输入。"
+  },
+  "Link": {
+    "attributes": ["onPress", "href", "miniappHref"],
+    "description": "Link 是基础的链接组件，在 Web 容器中通过 a 标签实现，它带有默认样式 textDecoration: 'none'。使用 Link 组件并不能新开一个 Webview ，它只是在当前的 Webview 中做页面的跳转。"
+  },
+  "Icon": {
+    "attributes": ["source", "fontFamily"],
+    "description": "图标组件，Icon 组件实现了 W3C 标准的 IconFont 接口。"
+  },
+  "Image": {
+    "attributes": ["source", "fallbackSource", "resizeMode", "mode", "quality", "placeholder", "onLoad", "onError", "success", "size", "size.naturalWidth", "size.naturalHeight", "target", "target.naturalWidth", "target.naturalHeight"],
+    "description": "图片展示组件，类似于 HTML image 标签，但提供了更丰富的功能，使用时需指定样式宽高值。"
+  },
+  "Picture": {
+    "attributes": ["source", "fallbackSource", "forceUpdate", "resizeMode", "mode", "quality", "placeholder", "lazyload", "autoPixelRatio", "autoRemoveScheme", "autoReplaceDomain", "autoScaling", "autoWebp", "autoCompress", "compressSuffix", "highQuality", "ignoreGif"],
+    "description": "复杂的图片组件。在 Weex 容器中，Picture 和 Image 组件只有 forceUpdate 属性不同。"
+  },
+  "Video": {
+    "attributes": ["src", "autoPlay", "muted", "loop", "playControl", "onEnded"],
+    "description": "视频播放组件。"
+  },
+  "ScrollView": {
+    "attributes": ["scrollEventThrottle", "horizontal", "showsHorizontalScrollIndicator", "showsVerticalScrollIndicator", "onEndReachedThreshold", "onEndReached", "onScroll"],
+    "description": "ScrollView 是一个滚动容器，可用于列表的展示。一般情况下需要为 ScrollView 设置确定的高度来保证其正常展现。"
+  },
+  "RecyclerView": {
+    "attributes": ["onEndReachedThreshold", "onEndReached", "onScroll"],
+    "description": "动态 View 的滚动组件，用于大量数据列表场景。在 Weex 下是对 list 与 cell 的包装，它通过内部子组件复用提升了滚动列表的性能。"
+  },
+  "Waterfall": {
+    "attributes": ["dataSource", "renderItem", "renderHeader", "renderFooter", "columnWidth", "columnCount", "columnGap", "cellProps", "onEndReachedThreshold", "onEndReached", "leftGap", "rightGap"],
+    "description": "用于实现瀑布流的列表容器，瀑布流中的每一项需要指定高度用于计算布局。"
+  },
+  "Embed": {
+    "attributes": ["src", "urlParam", "page_inside_embed", "page_home_isweex"],
+    "description": "内嵌内容容器，在 Weex 容器中通过 <web> 实现，在 Web 容器中通过 <iframe> <embed> 实现。"
+  },
+  "Countdown": {
+    "attributes": ["timeRemaining", "interval", "tpl", "formatFunc", "onTick", "onComplete", "timeStyle", "secondStyle", "textStyle", "timeWrapStyle", "timeBackground", "timeBackgroundStyle"],
+    "description": "倒计时组件，可设置倒计时毫秒数，以及展现的模板。"
+  },
+  "Canvas": {
+    "attributes": [],
+    "description": "画布组件。在 Weex 和 Web 中需要通过 ref 获取 canvas 实例，在小程序中需要通过 id 获取。"
+  },
+  "RefreshControl": {
+    "attributes": ["refreshing", "onRefresh"],
+    "description": "滚动容器的下拉刷新功能。"
+  },
+  "Slider": {
+    "attributes": ["width", "height", "autoPlay", "showsPagination", "paginationStyle", "loop", "index", "autoPlayInterval", "onChange", "index"],
+    "description": "轮播组件，通过幻灯片的方式，在页面中横向展示内容组件。 轮播内容相互独立，前后在内容以及数据上都不存在逻辑关系。"
+  },
+  "Modal": {
+    "attributes": ["visible", "contentStyle", "onShow", "onHide", "maskCanBeClick", "delay", "duration"],
+    "description": "Modal 提供了弹出遮罩层的能力，为 Alert, Confirm 等对话框组件提供了底层能力。"
+  },
+  "Button": {
+    "attributes": ["onPress"],
+    "description": "Button 是基础的按钮组件。内部实现依赖 <Touchable> 支持 onPress 定义的点击事件。Button 带有默认样式，同时也支持传入 children 替换原有结构。",
+    "version": "0.6"
+  },
+  "Touchable": {
+    "attributes": ["onPress"],
+    "description": "Touchable 定义简单的 touch 事件。 使用 Touchable 我们不用担心复杂的视图结构，也就是说我们不必再担心类似以前 tap 点击穿透这样的问题了。 对于复杂的手势事件，我们可以使用 rax-panresponder 。",
+    "version": "0.6"
+  },
+  "Row": {
+    "attributes": [],
+    "description": "Grid 组件：面向移动端页面的简单布局标签，提供外部行布局容器标签 Row，列 Col",
+    "version": "0.6"
+  },
+  "Col": {
+    "attributes": [],
+    "description": "Grid 组件：面向移动端页面的简单布局标签，提供外部行布局容器标签 Row，列 Col",
+    "version": "0.6"
+  },
+  "MultiRow": {
+    "attributes": ["renderCell", "dataSource", "cells"],
+    "description": "面向移动端页面的多列布局组件，如果想尽量减少页面的嵌套层级推荐使用样式去实现布局。长列表需求不要使用一个大的 MultiRow 组件进行统一布局，没有一个完整的大标签包裹性能会更好。",
+    "version": "0.6"
+  },
+  "ListView": {
+    "attributes": ["renderRow", "dataSource", "onEndReached", "onEndReachedThreshold", "onScroll", "renderHeader", "renderFooter", "renderScrollComponent"],
+    "description": "较复杂的列表实现，通过 dataSource 来定义每行渲染的数据，通过 renderRow 来定义每行渲染的模板，内部实现基于 RecyclerView。如果对性能有更高的要求推荐使用 RecyclerView，更方便进行扩展",
+    "version": "0.6"
+  },
+  "TabHeader": {
+    "attributes": ["dataSource", "renderItem", "itemWidth", "renderSelect", "onSelect", "selected", "type", "containerStyle", "itemStyle", "itemSelectedStyle", "animBuoyStyle", "dropDownCols"],
+    "description": "水平滚动 tab 切换，通过设置 type 类型可以展现不同的默认展现效果。",
+    "version": "0.6"
+  },
+  "Tabbar": {
+    "attributes": ["horizontal", "position", "autoHidden", "barTintColor", "tintColor"],
+    "description": "Tabbar 可以看作一个页面级的导航布局，包含了底部导航和切换的页面，外部不需要嵌套其它标签。",
+    "version": "0.6"
+  },
+  "Tabbar.Item": {
+    "attributes": ["title", "icon", "selectedIcon", "iconStyle", "selectedStyle", "selected", "badge", "href", "onPress"],
+    "description": "Tabbar 导航布局中的一项。",
+    "version": "0.6"
+  },
+  "Switch": {
+    "attributes": ["onTintColor", "tintColor", "thumbTintColor", "disabled", "value", "onValueChange"],
+    "description": "Switch 是状态切换的开关按钮组件，具有默认的展现样式。",
+    "version": "0.6"
+  },
+  "CheckBox": {
+    "attributes": ["checked", "checkedImage", "uncheckedImage", "containerStyle", "checkboxStyle", "onChange"],
+    "description": "CheckBox 是基础的选择框，选择框用图片实现，支持用户使用自己的图片进行替换",
+    "version": "0.6"
+  },
+  "Picker": {
+    "attributes": ["selectedValue", "onValueChange"],
+    "description": "Picker 是基础的下拉选择框，调用系统原生选择框实现，可以自定义选择项的内容。",
+    "version": "0.6"
+  },
+  "Picker.Item": {
+    "attributes": ["value", "label"],
+    "description": "Picker 下拉选择框中的一项。",
+    "version": "0.6"
+  },
+  "DatePicker": {
+    "attributes": ["selectedValue", "onDateChange", "minimumDate", "maximumDate"],
+    "description": "DatePicker 日期选择组件，调用系统原生选择框实现",
+    "version": "0.6"
+  },
+  "TimePicker": {
+    "attributes": ["selectedValue", "onTimeChange"],
+    "description": "TimePicker 时间选择组件，调用系统原生选择框实现",
+    "version": "0.6"
+  },
+  "Counter": {
+    "attributes": ["value", "start", "end", "onChange", "onComplete"],
+    "description": "Counter 数量选择，拥有默认的展现样式",
+    "version": "0.6"
+  },
+  "Calendar": {
+    "attributes": ["startDate", "endDate", "titleFormat", "dateFormat", "weekStart", "prevButtonText", "nextButtonText", "onDateSelect", "onTouchPrev", "onTouchNext"],
+    "description": "日历选择器组件，带有默认的展现样式",
+    "version": "0.6"
+  },
+  "Player": {
+    "attributes": ["src", "poster", "controls", "hasFullScreen", "originFullscreen", "startBtn", "autoPlay", "onVideoFinish", "onVideoPlay", "onVideoPause", "onVideoFail", "onLandscape", "interactiveId", "from", "userId", "utParams", "layerMode", "landscape"],
+    "description": "复杂的视频播放器组件",
+    "version": "0.6"
+  },
+  "Parallax": {
+    "attributes": ["bindingScroller", "transform", "opacity", "backgroundColor", "extraBindingProps"],
+    "description": "用于呈现滚动视差效果: 随着用户滚动页面，一些组件会随着滚动产生动画视差效果，如放大/缩小、位移、背景色/透明度/模糊渐变等",
+    "version": "0.6"
+  },
+  "TabController": {
+    "attributes": ["isPanEnabled", "isSlideEnabled", "pageConfig", "duration", "easing", "panDist", "screenNumbersPerSide", "extraBindingProps", "beforeSwitch", "afterSwitch", "onViewAppear", "onViewDisAppear", "useSlider", "forbidSwipeBackOnIOS", "defaultFocusIndex", "bounce"],
+    "description": "可横向滑动的面板",
+    "version": "0.6"
+  },
+  "TabPanel": {
+    "attributes": [],
+    "description": "",
+    "version": "0.6"
+  },
+  "TabPanelView": {
+    "attributes": [],
+    "description": "",
+    "version": "0.6"
+  },
+  "TabPanelLink": {
+    "attributes": ["href"],
+    "description": "",
+    "version": "0.6"
+  },
+  "TemplateList": {
+    "attributes": ["dataSource", "itemIndex", "itemName", "templateKey", "template", "onEndReached", "onEndReachedThreshold"],
+    "description": "基于数据列表和模块模板思路的场列表方案，在 weex 上将节省大量的 callNative 达到性能上的提升。h5 的实现上通过非可视区域的节点回收达到性能上的优化。",
+    "version": "0.6"
+  },
+  "TemplateList.Slot": {
+    "attributes": ["templateType", "key"],
+    "description": "",
+    "version": "0.6"
+  },
+  "TemplateList.For": {
+    "attributes": ["expression"],
+    "description": "",
+    "version": "0.6"
+  },
+  "TemplateList.If": {
+    "attributes": ["expression"],
+    "description": "",
+    "version": "0.6"
+  },
+  "TemplateList.Text": {
+    "attributes": [],
+    "description": "",
+    "version": "0.6"
+  },
+  "GyroscopeParallax": {
+    "attributes": ["onRotate", "onOrientationChange"],
+    "description": "陀螺仪视差动画 - 容器",
+    "version": "0.6"
+  },
+  "GyroscopeParallax.Layer": {
+    "attributes": ["depthX", "depthY", "limitX", "limitY", "invertX", "invertY"],
+    "description": "陀螺仪视差动画 - 层",
+    "version": "0.6"
+  },
+  "GestureView": {
+    "attributes": ["onHorizontalPan", "onVerticalPan"],
+    "description": "手势",
+    "version": "0.6"
+  }
+}

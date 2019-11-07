@@ -1,0 +1,68 @@
+{
+  "toast": {
+    "prefix": "toast",
+    "body": [
+      "Toast.show(\"${1}\", 2000);"
+    ],
+    "description": "toast"
+  },
+  "alert": {
+    "prefix": "alert",
+    "body": [
+      "alert({",
+      "\ttitle: '${1:title}',",
+      "\tcontent: '${2:content}',",
+      "\tbuttonText: '${3:tbuttonText}'",
+      "}).then(() => {",
+      "\tconsole.log('确定');$4",
+      "});"
+    ],
+    "description": "alert"
+  },
+  "confirm": {
+    "prefix": "confirm",
+    "body": [
+      "confirm({",
+      "\ttitle: '${1:title}',",
+      "\tcontent: '${2:tcontent}',",
+      "\tconfirmButtonText: '${3:confirmButtonText}',",
+      "\tcancelButtonText: '${4:cancelButtonText}'",
+      "}).then((confirm) => {",
+      "\tconsole.log(confirm);$5",
+      "});"
+    ],
+    "description": "confirm"
+  },
+  "Navigate-push": {
+    "prefix": "navpush",
+    "body": [
+      "Navigate.push({",
+      "\turl: '${1:url}',",
+      "\tanimated: ${2:true} // 仅 weex 中支持",
+      "}).then(() => {$3",
+      "});"
+    ],
+    "description": "Navigate.push"
+  },
+  "Navigate-pop": {
+    "prefix": "navpop",
+    "body": [
+      "Navigate.pop({",
+      "\tanimated: ${2:false} // 仅 weex 中支持",
+      "}).then(() => {$3",
+      "});"
+    ],
+    "description": "Navigate.pop"
+  },
+  "Navigate-go": {
+    "prefix": "navgo",
+    "body": [
+      "Navigate.go({",
+      "\tstep: '${1:-1}',",
+      "\tanimated: ${2:false} // 仅 weex 中支持",
+      "}).then(() => {$3",
+      "});"
+    ],
+    "description": "Navigate.go"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "name": "rax-helper",
+  "displayName": "Rax-helper",
+  "description": "a vscode plugin for Rax.js",
+  "version": "0.0.1",
+  "publisher": "Ryan",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SirM2z/rax-helper"
+  },
+  "keywords": [
+    "rax"
+  ],
+  "engines": {
+    "vscode": "^1.39.0"
+  },
+  "categories": [
+    "Snippets",
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:javascript",
+    "onLanguage:javascriptreact",
+    "onLanguage:typescript",
+    "onLanguage:typescriptreact",
+    "onCommand:rax-helper.restart"
+  ],
+  "main": "./out/extension.js",
+  "icon": "rax.png",
+  "contributes": {
+    "commands": [
+      {
+        "command": "rax-helper.restart",
+        "title": "rax-helper.restart"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "javascript",
+        "path": "./snippets/rax.json"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.1",
+    "@types/mocha": "^5.2.6",
+    "@types/node": "^10.12.21",
+    "@types/vscode": "^1.39.0",
+    "glob": "^7.1.4",
+    "mocha": "^6.1.4",
+    "typescript": "^3.3.1",
+    "tslint": "^5.12.1",
+    "vscode-test": "^1.2.0"
+  },
+  "dependencies": {}
+}

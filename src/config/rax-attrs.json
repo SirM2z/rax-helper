@@ -1,0 +1,363 @@
+{
+  "style": {"type": "object", "description": "样式对象", "global": true},
+
+  "Text/numberOfLines": {"description": "文本行数"},
+
+  "View/onLongPress": {"type": "method", "description": "当组件被长按时触发的事件 type: Function"},
+  "View/onAppear": {"type": "method", "description": "当组件在视窗内可见时触发的事件 type: Function"},
+  "View/onDisappear": {"type": "method", "description": "当组件在视窗内消失时触发的事件 type: Function"},
+  "View/onTouchStart": {"type": "method", "description": "触摸到组件时触发的事件 type: Function"},
+  "View/onTouchMove": {"type": "method", "description": "手指在组件上移动时触发的事件 type: Function"},
+  "View/onTouchEnd": {"type": "method", "description": "触摸动作结束时触发的事件 type: Function"},
+  "View/onTouchCancel": {"type": "method", "description": "触摸动作被打断，如来电提醒，弹窗 type: Function"},
+
+  "TextInput/multiline": {"type": "boolean", "description": "定义该属性文本框可以输入多行文字"},
+  "TextInput/accessibilityLabel": {"description": "为元素添加标识"},
+  "TextInput/autoComplete": {"type": "boolean", "description": "添加开启自动完成功能"},
+  "TextInput/autoFocus": {"type": "boolean", "description": "添加开启获取焦点"},
+  "TextInput/onAppear": {"type": "method", "description": "当前元素可见时触发 type: Function"},
+  "TextInput/editable": {"type": "boolean", "description": "默认为 true 如果为 fase 则文本框不可编辑"},
+  "TextInput/keyboardType": {
+    "options": [
+      {"val": "default", "des": ""},
+      {"val": "ascii-capable", "des": ""},
+      {"val": "numbers-and-punctuation", "des": ""},
+      {"val": "url", "des": ""},
+      {"val": "number-pad", "des": ""},
+      {"val": "phone-pad", "des": ""},
+      {"val": "name-phone-pad", "des": ""},
+      {"val": "email-address", "des": ""},
+      {"val": "decimal-pad", "des": ""},
+      {"val": "twitter", "des": ""},
+      {"val": "web-search", "des": ""},
+      {"val": "numeric", "des": ""}
+    ],
+    "description": "为元素添加标识"
+  },
+  "TextInput/maxLength": {"description": "设置最大可输入值"},
+  "TextInput/maxNumberOfLines": {"description": "当文本框为 mutiline 时设置最多的行数"},
+  "TextInput/numberOfLines": {"description": "当文本框为 mutiline 时设置行数"},
+  "TextInput/placeholder": {"description": "设置文本框提示"},
+  "TextInput/password": {"type": "boolean", "description": "文本框内容密码显示"},
+  "TextInput/secureTextEntry": {"type": "boolean", "description": "文本框内容密码显示"},
+  "TextInput/value": {"description": "文本框的文字内容 (受控)"},
+  "TextInput/defaultValue": {"description": "文本框的文字内容（非受控）"},
+  "TextInput/onBlur": {"type": "method", "description": "文本框失焦时调用此函数 type: Function"},
+  "TextInput/onFocus": {"type": "method", "description": "文本框获得焦点时调用此函数 type: Function"},
+  "TextInput/onChange": {"type": "method", "description": "文本框内容变化时调用此函数（用户输入完成时触发。通常在 blur 事件之后） type: Function"},
+  "TextInput/onChangeText": {"type": "method", "description": "触发时机和onChange一致, 区别在于该函数的参数是文本框内容 type: Function"},
+  "TextInput/onInput": {"description": "文本框输入内容时调用此函数 type: Function"},
+
+  "Link/onPress": {"type": "method", "description": "节点被点击之后触发 type: Function"},
+  "Link/href": {"description": "跳转目标地址"},
+  "Link/miniappHref": {"description": "跳转类型：跳转地址，例如 navigate:/pages/index/index"},
+
+  "Icon/source": {"description": "当 icon 是图片时，uri 是图片路径，优先级比 fontFamily 和 codePoint 高。 {uri: String, codePoint: ''}"},
+  "Icon/fontFamily": {"description": "iconfont的字体"},
+
+  "Image/source": {"type": "object", "description": "设置图片的 uri。 {uri: String}"},
+  "Image/fallbackSource": {"type": "object", "description": "备用图片的 uri（当主图加载失败是加载）。 {uri: String}"},
+  "Image/resizeMode": {
+    "options": [
+      {"val": "contain", "des": "缩放图片以完全装入<Image>区域，可能背景区部分空白。"},
+      {"val": "cover", "des": "缩放图片以完全覆盖<Image>区域，可能图片部分看不见。"},
+      {"val": "stretch", "des": "默认值。按照<Image>区域的宽高比例缩放图片。"}
+    ],
+    "description": "当组件尺寸和图片尺寸不成比例的时候如何调整图片的大小"
+  },
+  "Image/mode": {"description": "小程序中的图片模式"},
+  "Image/quality": {
+    "options": [
+      {"val": "original", "des": "原图"},
+      {"val": "normal", "des": "正常"},
+      {"val": "low", "des": "低"},
+      {"val": "high", "des": "高"},
+      {"val": "auto", "des": "自动"}
+    ],
+    "description": "图片质量"
+  },
+  "Image/placeholder": {"description": "占位图的 uri，在图片下载过程中将展示占位图，图片下载完成后将显示source中指定的图片"},
+  "Image/onLoad": {"type": "method", "description": "图片加载成功的回调函数 type: Function"},
+  "Image/onError": {"type": "method", "description": "图片加载失败的回调函数 type: Function"},
+
+  "Picture/source": {"type": "object", "description": "{uri: String}，设置图片的 uri"},
+  "Picture/fallbackSource": {"type": "object", "description": "{uri: String}，备用图片的uri（当主图加载失败是加载）"},
+  "Picture/forceUpdate": {"type": "boolean", "description": "Picture 是一个 PureComponent ，它的 shouldComponentUpdate 决定了当且仅当 porps.source.uri 有变化时才会重新 render。如果你想忽略它的 shouldComponentUpdate，则传入 forceUpdate={true}"},
+  "Picture/resizeMode": {
+    "options": [
+      {"val": "contain", "des": "缩放图片以完全装入<Image>区域，可能背景区部分空白。"},
+      {"val": "cover", "des": "缩放图片以完全覆盖<Image>区域，可能图片部分看不见。"},
+      {"val": "stretch", "des": "默认值。按照<Image>区域的宽高比例缩放图片。"}
+    ],
+    "description": "当组件尺寸和图片尺寸不成比例的时候如何调整图片的大小"
+  },
+  "Picture/mode": {"description": "小程序中的图片模式，仅支持小程序"},
+  "Picture/quality": {
+    "options": [
+      {"val": "original", "des": "原图"},
+      {"val": "normal", "des": "正常"},
+      {"val": "low", "des": "低"},
+      {"val": "high", "des": "高"},
+      {"val": "auto", "des": "自动"}
+    ],
+    "description": "图片质量"
+  },
+  "Picture/placeholder": {"description": "占位图的 URL，在图片下载过程中将展示占位图，图片下载完成后将显示source中指定的图片"},
+  "Picture/lazyload": {"type": "boolean", "description": "web端有效，根据图像是否在可视范围内延迟加载图像 (注意：fixed 的元素请关闭 lazyload)"},
+  "Picture/autoPixelRatio": {"type": "boolean", "description": "web端有效，在高分辨率下使用二倍图"},
+  "Picture/autoRemoveScheme": {"type": "boolean", "description": "web端有效,图像 URL 自动删除协议头"},
+  "Picture/autoReplaceDomain": {"type": "boolean", "description": "web端有效 图像 URL"},
+  "Picture/autoScaling": {"type": "boolean", "description": "web端有效, 为图像 URL 添加缩放后缀，将会根据 style 内的 width 属性添加缩放后缀"},
+  "Picture/autoWebp": {"type": "boolean", "description": "web端有效，添加 webp 后缀"},
+  "Picture/autoCompress": {"type": "boolean", "description": "web端有效, 添加质量压缩后缀"},
+  "Picture/compressSuffix": {"type": "object", "description": "web端有效, 图像质量压缩后缀规则。Array<string>"},
+  "Picture/highQuality": {"type": "boolean", "description": "web端有效， 使用高质量的压缩后缀"},
+  "Picture/ignoreGif": {"type": "boolean", "description": "web端有效，所有针对 URL 的优化是否忽略 gif 格式的图像，默认忽略"},
+
+  "Video/src": {"description": "视频地址"},
+  "Video/autoPlay": {"type": "boolean", "description": "设置视频自动播放， default: false"},
+  "Video/muted": {"type": "boolean", "description": "是否播放音频， default: false"},
+  "Video/loop": {"type": "boolean", "description": "是否循环播放 default: false"},
+  "Video/playControl": {
+    "options": [
+      {"val": "play", "des": "加载完播放"},
+      {"val": "pause", "des": "默认值。加载完不播放。"}
+    ],
+    "description": "play 或 pause，控制视频播放，如果不设置，则通过autoPlay属性来判定当视频加载后，是否播放"
+  },
+  "Video/onEnded": {"type": "method", "description": "当视频播放完成时调用的回调函数 type: Function"},
+
+  "ScrollView/scrollEventThrottle": {"description": "这个属性控制在滚动过程中，scroll事件被调用的频率，用于滚动的节流。 default: 100"},
+  "ScrollView/horizontal": {"type": "boolean", "description": "设置为横向滚动"},
+  "ScrollView/showsHorizontalScrollIndicator": {"type": "boolean", "description": "是否允许出现水平滚动条"},
+  "ScrollView/showsVerticalScrollIndicator": {"type": "boolean", "description": "是否允许出现垂直滚动条"},
+  "ScrollView/onEndReachedThreshold": {"description": "设置加载更多的偏移。 default: 500"},
+  "ScrollView/onEndReached": {"type": "method", "description": "滚动区域还剩onEndReachedThreshold的长度时触发 type: Function"},
+  "ScrollView/onScroll": {"type": "method", "description": "滚动时触发的事件，返回当前滚动的水平垂直距离 type: Function"},
+
+  "RecyclerView/onEndReachedThreshold": {"description": "设置加载更多的偏移。 default: 500"},
+  "RecyclerView/onEndReached": {"type": "method", "description": "滚动区域还剩onEndReachedThreshold的长度时触发 type: Function"},
+  "RecyclerView/onScroll": {"type": "method", "description": "滚动时触发的事件，返回当前滚动的水平垂直距离 type: Function"},
+
+  "Waterfall/dataSource": {"type": "object", "description": "瀑布流数组，需要传入模块高度 type: Array"},
+  "Waterfall/renderItem": {"type": "method", "description": "渲染每项的模板 type: Function"},
+  "Waterfall/renderHeader": {"type": "method", "description": "渲染 header 部分 type: Function"},
+  "Waterfall/renderFooter": {"type": "method", "description": "渲染 footer 部分 type: Function"},
+  "Waterfall/columnWidth": {"description": "列宽 default: 750"},
+  "Waterfall/columnCount": {"description": "列数 default: 1"},
+  "Waterfall/columnGap": {"description": "列间距 default: 0"},
+  "Waterfall/cellProps": {"type": "object", "description": "weex Cell 组件的props"},
+  "Waterfall/onEndReachedThreshold": {"description": "设置加载更多的偏移 default: 500"},
+  "Waterfall/onEndReached": {"type": "method", "description": "滚动区域还剩onEndReachedThreshold的长度时触发 type: Function"},
+  "Waterfall/leftGap": {"description": "距离左边的间隙 default: 0"},
+  "Waterfall/rightGap": {"description": "距离右边的间隙 default: 0"},
+
+  "Embed/src": {"description": "嵌入的页面地址"},
+  "Embed/urlParam": {"description": "传递给子页面的参数"},
+  "Embed/page_inside_embed": {"type": "boolean", "description": "页面是否在 embed 中"},
+  "Embed/page_home_isweex": {"type": "boolean", "description": "子页面的宿主页面是否是 Weex 渲染"},
+
+  "Countdown/timeRemaining": {"description": "倒计时剩余时间,单位为\"毫秒\""},
+  "Countdown/interval": {"description": "倒计时的间隔,单位为\"毫秒\" default: 1000"},
+  "Countdown/tpl": {"description": "倒计时展示模板 default: {d}天{h}时{m}分{s}秒{ms}"},
+  "Countdown/formatFunc": {"type": "method", "description": "自定义格式化剩余时间的方法，非undefined时tpl失效，处理剩余时间的展示 type: Function"},
+  "Countdown/onTick": {"type": "method", "description": "倒计时变化时调用的方法 type: Function"},
+  "Countdown/onComplete": {"type": "method", "description": "倒计时完成时调用的方法 type: Function"},
+  "Countdown/timeStyle": {"type": "object", "description": "数字第一位的样式"},
+  "Countdown/secondStyle": {"type": "object", "description": "数字第二位的样式"},
+  "Countdown/textStyle": {"type": "object", "description": "时间-单位的样式"},
+  "Countdown/timeWrapStyle": {"type": "object", "description": "各时间区块的样式"},
+  "Countdown/timeBackground": {"type": "object", "description": "各时间区块背景(可加背景图)"},
+  "Countdown/timeBackgroundStyle": {"type": "object", "description": "各时间区块背景样式"},
+
+  "RefreshControl/refreshing": {"description": "是否显示"},
+  "RefreshControl/onRefresh": {"type": "method", "description": "监听下拉刷新的行为 type: Function"},
+
+  "Slider/width": {"description": "宽度"},
+  "Slider/height": {"description": "高度"},
+  "Slider/autoPlay": {"type": "boolean", "description": "是否自动播放"},
+  "Slider/showsPagination": {"type": "boolean", "description": "是否显示指示点"},
+  "Slider/paginationStyle": {"type": "object", "description": "自己定义指示点的样式，否则默认样式居中"},
+  "Slider/loop": {"type": "boolean", "description": "是否是循环播放"},
+  "Slider/index": {"description": "指定默认初始化第几页 default: 0"},
+  "Slider/autoPlayInterval": {"description": "自动播放的间隔时间 default: 3000"},
+  "Slider/onChange": {"type": "method", "description": "index 改变时会触发 type: Function"},
+
+  "Modal/visible": {"type": "boolean", "description": "控制弹层是否显示"},
+  "Modal/contentStyle": {"type": "object", "description": "自定义内容容器样式"},
+  "Modal/onShow": {"type": "method", "description": "当弹层显示的时候触发回调 type: Function"},
+  "Modal/onHide": {"type": "method", "description": "当弹层关闭的时候触发回调 type: Function"},
+  "Modal/maskCanBeClick": {"type": "boolean", "description": "是否可以通过点击背景蒙层关闭弹层"},
+  "Modal/delay": {"description": "延迟时间（毫秒） default: 0"},
+  "Modal/duration": {"description": "动画持续时间（毫秒） default: 300"},
+
+  "Button/onPress": {"type": "method", "description": "点击事件 type: Function", "version": "0.6"},
+
+  "Touchable/onPress": {"type": "method", "description": "点击事件 type: Function", "version": "0.6"},
+
+  "MultiRow/renderCell": {"type": "method", "description": "模板方法（必需） type: Function", "version": "0.6"},
+  "MultiRow/dataSource": {"type": "object", "description": "需要渲染的数据，与 renderCell 配合使用（必需）", "version": "0.6"},
+  "MultiRow/cells": {"description": "每行包含几列，默认1列（必需） default: 1", "version": "0.6"},
+
+  "ListView/renderRow": {"type": "method", "description": "模板方法（必需） type: Function", "version": "0.6"},
+  "ListView/dataSource": {"type": "object", "description": "需要渲染的数据，与 renderRow 配合使用（必需）", "version": "0.6"},
+  "ListView/onEndReached": {"type": "method", "description": "滚动到底部触发事件，将修改后的数据付给 data type: Function", "version": "0.6"},
+  "ListView/onEndReachedThreshold": {"description": "距离多少开始加载下一屏，数字单位默认 rem default: 500", "version": "0.6"},
+  "ListView/onScroll": {"type": "method", "description": "滚动时触发的事件，返回当前滚动的水平垂直距离 type: Function", "version": "0.6"},
+  "ListView/renderHeader": {"type": "method", "description": "列表头部 需返回要渲染的标签 type: Function", "version": "0.6"},
+  "ListView/renderFooter": {"type": "method", "description": "列表底部 需返回要渲染的标签 (可以在此处实现 loading 菊花效果) type: Function", "version": "0.6"},
+  "ListView/renderScrollComponent": {"type": "method", "description": "返回 listview 的外层包裹容器 type: Function", "version": "0.6"},
+  
+  "TabHeader/dataSource": {"type": "object", "description": "tab 选项的数据（必填）", "version": "0.6"},
+  "TabHeader/renderItem": {"type": "method", "description": "渲染每项的模板（必填） type: Function", "version": "0.6"},
+  "TabHeader/itemWidth": {"description": "渲染每项的模板（必填） default: 300，也可以为 Function", "version": "0.6"},
+  "TabHeader/renderSelect": {"type": "method", "description": "选中导航项的模版 type: Function", "version": "0.6"},
+  "TabHeader/onSelect": {"type": "method", "description": "选中某一 tab 事件 type: Function", "version": "0.6"},
+  "TabHeader/selected": {"description": "选中的导航项，从0开始 default: 0", "version": "0.6"},
+  "TabHeader/type": {"description": "导航默认展现样式 default: 'default-noAnim-scroll'", "version": "0.6"},
+  "TabHeader/containerStyle": {"type": "object", "description": "导航默认展现样式", "version": "0.6"},
+  "TabHeader/itemStyle": {"type": "object", "description": "单个 tab 展现样式", "version": "0.6"},
+  "TabHeader/itemSelectedStyle": {"type": "object", "description": "单个选中 tab 展现样式", "version": "0.6"},
+  "TabHeader/animBuoyStyle": {"type": "object", "description": "滑动色块展现样式", "version": "0.6"},
+  "TabHeader/dropDownCols": {"description": "下拉列表的列数", "version": "0.6"},
+
+  "Tabbar/horizontal": {"type": "boolean", "description": "是否出现水平滚动条 default: false", "version": "0.6"},
+  "Tabbar/position": {
+    "options": [
+      {"val": "top", "des": "导航条位置：顶部"},
+      {"val": "bottom", "des": "导航条位置：底部"}
+    ],
+    "description": "是否出现水平滚动条 default: top",
+    "version": "0.6"
+  },
+  "Tabbar/autoHidden": {"type": "boolean", "description": "如果tabbar在RaxEmbed中，是否由自动隐藏tabbar模块 default: false", "version": "0.6"},
+  "Tabbar/barTintColor": {"description": "bar的背景色 type: color", "version": "0.6"},
+  "Tabbar/tintColor": {"description": "选中tab的文案颜色 type: color", "version": "0.6"},
+
+  "Tabbar.Item/title": {"description": "选中项上的文案", "version": "0.6"},
+  "Tabbar.Item/icon": {"description": "icon图片url", "version": "0.6"},
+  "Tabbar.Item/selectedIcon": {"description": "tab选中状态icon的url", "version": "0.6"},
+  "Tabbar.Item/iconStyle": {"type": "object", "description": "icon的样式 default: {width: 48,height:48}", "version": "0.6"},
+  "Tabbar.Item/selectedStyle": {"type": "object", "description": "tab选中状态icon的样式", "version": "0.6"},
+  "Tabbar.Item/selected": {"type": "boolean", "description": "是否选中 default: false", "version": "0.6"},
+  "Tabbar.Item/badge": {"description": "透出的消息数", "version": "0.6"},
+  "Tabbar.Item/href": {"description": "仅weex中生效：点击当前项动作改为“打开一个页面”", "version": "0.6"},
+  "Tabbar.Item/onPress": {"description": "选中的回调，用于处理h5中页面切换 type: Function", "version": "0.6"},
+  
+  "Switch/onTintColor": {"description": "设置开关打开的背景色", "version": "0.6"},
+  "Switch/tintColor": {"description": "设置开关关闭时的背景色", "version": "0.6"},
+  "Switch/thumbTintColor": {"description": "开关圆形按钮的背景色", "version": "0.6"},
+  "Switch/disabled": {"type": "boolean", "description": "开关是否可交互 true", "version": "0.6"},
+  "Switch/value": {"type": "boolean", "description": "开关默认状态开启或关闭 true", "version": "0.6"},
+  "Switch/onValueChange": {"type": "method", "description": "值改变时调用此函数 type: Function", "version": "0.6"},
+  
+  "CheckBox/checked": {"type": "boolean", "description": "选中状态", "version": "0.6"},
+  "CheckBox/checkedImage": {"description": "选中图片", "version": "0.6"},
+  "CheckBox/uncheckedImage": {"description": "非选中图片", "version": "0.6"},
+  "CheckBox/containerStyle": {"type": "object", "description": "选择框容器样式", "version": "0.6"},
+  "CheckBox/checkboxStyle": {"type": "object", "description": "选择框图片样式", "version": "0.6"},
+  "CheckBox/onChange": {"type": "method", "description": "选择事件 type: Function", "version": "0.6"},
+  
+  "Picker/selectedValue": {"description": "选中值", "version": "0.6"},
+  "Picker/onValueChange": {"type": "method", "description": "选项切换 type: Function", "version": "0.6"},
+  
+  "Picker.Item/value": {"description": "被选中的值", "version": "0.6"},
+  "Picker.Item/label": {"description": "被选中的label", "version": "0.6"},
+  
+  "DatePicker/selectedValue": {"description": "选中值（示例：2017-01-01）", "version": "0.6"},
+  "DatePicker/onDateChange": {"type": "method", "description": "日期切换 type: Function", "version": "0.6"},
+  "DatePicker/minimumDate": {"description": "日期选择最小范围（示例：2017-01-01）", "version": "0.6"},
+  "DatePicker/maximumDate": {"description": "日期选择最大范围（示例：2017-01-01）", "version": "0.6"},
+  
+  "TimePicker/selectedValue": {"description": "选中值（示例：01:01）", "version": "0.6"},
+  "TimePicker/onTimeChange": {"type": "method", "description": "时间选择 type: Function", "version": "0.6"},
+
+  "Counter/selectedValue": {"description": "默认数值", "version": "0.6"},
+  "Counter/start": {"description": "起始值", "version": "0.6"},
+  "Counter/end": {"description": "终止值", "version": "0.6"},
+  "Counter/onChange": {"type": "method", "description": "改变值时触发 type: Function", "version": "0.6"},
+  "Counter/onComplete": {"type": "method", "description": "渲染完成触发 type: Function", "version": "0.6"},
+
+  "Calendar/startDate": {"description": "可选的起始时间", "version": "0.6"},
+  "Calendar/endDate": {"description": "可选的结束时间", "version": "0.6"},
+  "Calendar/titleFormat": {"description": "月份的渲染格式 default: MMMM YYYY", "version": "0.6"},
+  "Calendar/dateFormat": {"description": "返回的日期格式 default: YYYY-MM-DD", "version": "0.6"},
+  "Calendar/weekStart": {"description": "把周几作为一个星期的开始 default: 1", "version": "0.6"},
+  "Calendar/prevButtonText": {"description": "月份切换按钮的显示文案", "version": "0.6"},
+  "Calendar/nextButtonText": {"description": "月份切换按钮的显示文案", "version": "0.6"},
+  "Calendar/onDateSelect": {"type": "method", "description": "选中某个日期 type: Function", "version": "0.6"},
+  "Calendar/onTouchPrev": {"type": "method", "description": "上一个月 type: Function", "version": "0.6"},
+  "Calendar/onTouchNext": {"type": "method", "description": "下一个月 type: Function", "version": "0.6"},
+  
+  "Player/src": {"description": "视频地址（必填）", "version": "0.6"},
+  "Player/poster": {"description": "封面图地址（必填）", "version": "0.6"},
+  "Player/controls": {"description": "如果出现该属性，则显示控制器控件（该控制项只在h5下生效） default: controls", "version": "0.6"},
+  "Player/hasFullScreen": {"type": "boolean", "description": "开关默认状态开启或关闭 default: true", "version": "0.6"},
+  "Player/originFullscreen": {"type": "boolean", "description": "开关默认状态开启或关闭 default: false", "version": "0.6"},
+  "Player/startBtn": {"description": "如果出现该属性，则显示开始暂停button default: startBtn", "version": "0.6"},
+  "Player/autoPlay": {"description": "如果出现该属性，则视频在就绪后马上播放 default: autoplay", "version": "0.6"},
+  "Player/onVideoFinish": {"type": "method", "description": "video播放结束时间处理方法 type: Function", "version": "0.6"},
+  "Player/onVideoPlay": {"type": "method", "description": "video播放时的处理方法 type: Function", "version": "0.6"},
+  "Player/onVideoPause": {"type": "method", "description": "video暂停时的处理方法 type: Function", "version": "0.6"},
+  "Player/onVideoFail": {"type": "method", "description": "video播放失败时的处理方法 type: Function", "version": "0.6"},
+  "Player/onLandscape": {"type": "method", "description": "仅videoplus支持的方法 横竖屏切换时候触发 type: Function", "version": "0.6"},
+  "Player/interactiveId": {"description": "仅videoplus支持的属性 对于互动视频必选", "version": "0.6"},
+  "Player/from": {"description": "仅videoplus支持的属性 对于互动视频必选", "version": "0.6"},
+  "Player/userId": {"description": "仅videoplus支持的属性 对于互动视频必选", "version": "0.6"},
+  "Player/utParams": {"type": "object", "description": "仅videoplus支持的属性 埋点参数，默认为{bizcode: 'RX'}，如果有埋点需求，得找videoplus的pd@慈兰申请bizCode", "version": "0.6"},
+  "Player/layerMode": {"description": "仅videoplus支持的属性 normal：展示互动，播放器控制条为正常样式 mute：静默播放模式，不展示互动，播放器控制条为静默样式", "version": "0.6"},
+  "Player/landscape": {"type": "boolean", "description": "仅videoplus支持的属性 true为横屏、false为竖屏 default: false", "version": "0.6"},
+
+  "Parallax/bindingScroller": {"type": "object", "description": "滚动容器 如this.refs.listView", "version": "0.6"},
+  "Parallax/transform": {"type": "object", "description": "transform变换属性", "version": "0.6"},
+  "Parallax/opacity": {"type": "object", "description": "透明度变换属性", "version": "0.6"},
+  "Parallax/backgroundColor": {"type": "object", "description": "背景色变换属性", "version": "0.6"},
+  "Parallax/extraBindingProps": {"type": "object", "description": "额外需要绑定在bindingScroller上的binding属性", "version": "0.6"},
+
+  "TabController/isPanEnabled": {"type": "boolean", "description": "是否可以pan来横向滑动 default: true", "version": "0.6"},
+  "TabController/isSlideEnabled": {"type": "boolean", "description": "是否可以有滑动slide效果 default: true", "version": "0.6"},
+  "TabController/pageConfig": {"type": "object", "description": "页面埋点曝光配置", "version": "0.6"},
+  "TabController/duration": {"description": "切换的动画周期，单位ms(仅在useSlider:false有效) default: 250", "version": "0.6"},
+  "TabController/easing": {"description": "动画缓动函数(仅在useSlider:false有效) default: cubic-bezier(0.25, 0.46, 0.45, 0.94)", "version": "0.6"},
+  "TabController/panDist": {"description": "判断滑动方向的阈值(仅在useSlider:false有效) default: 375", "version": "0.6"},
+  "TabController/screenNumbersPerSide": {"description": "定义当前tabPanel两侧需要保留的panel数量，默认全部保留", "version": "0.6"},
+  "TabController/extraBindingProps": {"description": "根据tabPanel滑动所需进行的额外的binding效果 如：[{element: this.refs.wrap,property: 'transform.translateX',expression:'x+0'}]", "version": "0.6"},
+  "TabController/beforeSwitch": {"type": "method", "description": "切换到某个tab之前 type: Function", "version": "0.6"},
+  "TabController/afterSwitch": {"type": "method", "description": "切换到某个tab之后 type: Function", "version": "0.6"},
+  "TabController/onViewAppear": {"type": "method", "description": "页面可见时触发(透传document的onViewAppear) type: Function", "version": "0.6"},
+  "TabController/onViewDisAppear": {"type": "method", "description": "页面不可见时触发(透传document的onViewDisAppear) type: Function", "version": "0.6"},
+  "TabController/useSlider": {"type": "boolean", "description": "是否用weex的<slider>组件来渲染 default: false", "version": "0.6"},
+  "TabController/forbidSwipeBackOnIOS": {"description": "是否阻止IOS上默认的侧滑返回功能，默认'auto'会在第0个panel时解除阻止 default: 'auto' type: Boolean,String", "version": "0.6"},
+  "TabController/defaultFocusIndex": {"description": "默认聚焦到第几个panel default: 0", "version": "0.6"},
+  "TabController/bounce": {"type": "boolean", "description": "滑动到边缘是否有会弹效果(useSlider下无效) default: true", "version": "0.6"},
+
+  "TabPanelLink/href": {"description": "链接", "version": "0.6"},
+
+  "TemplateList/dataSource": {"type": "object", "description": "数据源", "version": "0.6"},
+  "TemplateList/itemIndex": {"description": "渲染某一项的 index", "version": "0.6"},
+  "TemplateList/itemName": {"description": "模版中获取到数据的别名", "version": "0.6"},
+  "TemplateList/templateKey": {"description": "指定模版类型的标识", "version": "0.6"},
+  "TemplateList/template": {"type": "object", "description": "模版标签数据", "version": "0.6"},
+  "TemplateList/onEndReached": {"type": "object", "description": "列表底部的 loadmore 事件", "version": "0.6"},
+  "TemplateList/onEndReachedThreshold": {"description": "触发 onEndReached 时距离地步的距离", "version": "0.6"},
+
+  "TemplateList.Slot/templateType": {"type": "object", "description": "模板类型，与数据源中的类型相对应", "version": "0.6"},
+  "TemplateList.Slot/key": {"type": "object", "description": "将指定的 index 传入", "version": "0.6"},
+
+  "TemplateList.For/expression": {"type": "object", "description": "循环表达式，参考示例 '(item, i) in dataset'", "version": "0.6"},
+
+  "TemplateList.If/expression": {"type": "object", "description": "条件判断表达式，参考示例 'number > 0'", "version": "0.6"},
+
+  "GyroscopeParallax/onRotate": {"type": "method", "description": "beta、gamma发生旋转时触发 type: Function", "version": "0.6"},
+  "GyroscopeParallax/onOrientationChange": {"type": "method", "description": "alpha、beta、gamma旋转时触发,即原生deviceorientation事件透出 type: Function", "version": "0.6"},
+  
+  "GyroscopeParallax.Layer/depthX": {"description": "水平偏移量比率，值越大速度越快 default: 0", "version": "0.6"},
+  "GyroscopeParallax.Layer/depthY": {"description": "垂直偏移量比率，值越大速度越快 default: 0", "version": "0.6"},
+  "GyroscopeParallax.Layer/limitX": {"description": "水平最大偏移量限制", "version": "0.6"},
+  "GyroscopeParallax.Layer/limitY": {"description": "垂直最大偏移量限制", "version": "0.6"},
+  "GyroscopeParallax.Layer/invertX": {"type": "boolean", "description": "是否水平方向反向", "version": "0.6"},
+  "GyroscopeParallax.Layer/invertY": {"type": "boolean", "description": "是否垂直方向反向", "version": "0.6"},
+
+  "GestureView/onHorizontalPan": {"type": "method", "description": "监听水平滑动手势 type: Function", "version": "0.6"},
+  "GestureView/onVerticalPan": {"type": "method", "description": "监听垂直滑动手势 type: Function", "version": "0.6"}
+}
