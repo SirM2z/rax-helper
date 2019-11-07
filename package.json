@@ -3,7 +3,7 @@
   "displayName": "Rax-helper",
   "description": "a vscode plugin for Rax.js",
   "version": "0.0.1",
-  "publisher": "Ryan",
+  "publisher": "sirm2z",
   "repository": {
     "type": "git",
     "url": "https://github.com/SirM2z/rax-helper"
