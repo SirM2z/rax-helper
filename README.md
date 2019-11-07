@@ -10,7 +10,7 @@
 
 ## Usage
 
-![rax-helper](./rax-helper.gif)
+![rax-helper](https://i.loli.net/2019/11/07/6hCS4NoBuYVjDEg.gif)
 
 ## Snippets
 
