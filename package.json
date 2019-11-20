@@ -1,8 +1,8 @@
 {
   "name": "rax-helper",
   "displayName": "Rax-helper",
-  "description": "a vscode plugin for Rax.js",
-  "version": "0.0.1",
+  "description": "Visual Studio Code plugin for Rax.js",
+  "version": "0.0.2",
   "publisher": "sirm2z",
   "repository": {
     "type": "git",
@@ -37,6 +37,10 @@
     "snippets": [
       {
         "language": "javascript",
+        "path": "./snippets/rax.json"
+      },
+      {
+        "language": "javascriptreact",
         "path": "./snippets/rax.json"
       }
     ]
