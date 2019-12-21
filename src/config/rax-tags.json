@@ -4,8 +4,12 @@
     "description": "Text 用于显示文本，在 Web 容器中是使用 span 标签实现的，而不是 p 标签。ext 在样式布局中会独占一行，可以通过 Text 嵌套来完成富文本相关的渲染需求。"
   },
   "View": {
-    "attributes": ["onLongPress", "onAppear", "onDisappear", "onTouchStart", "onTouchMove", "onTouchEnd", "onTouchCancel"],
+    "attributes": ["onLongPress", "onAppear", "onDisappear", "onTouchStart", "onTouchMove", "onTouchEnd", "onTouchCancel", "onClick"],
     "description": "View 是最基础的组件，默认为 Flexbox 布局，并且可以任意嵌套。不论在什么容器中，View 都直接对应一个容器的原生视图，比如在 Web 容器中是使用 div 实现的。支持任意自定义属性的透传。"
+  },
+  "Fragment": {
+    "attributes": [],
+    "description": "提供空组件，不产生 UI，提供绑定 x-if x-for x-slot 指令。"
   },
   "TextInput": {
     "attributes": ["multiline", "accessibilityLabel", "autoComplete", "autoFocus", "onAppear", "editable", "keyboardType", "maxLength", "maxNumberOfLines", "numberOfLines", "placeholder", "password", "secureTextEntry", "value", "defaultValue", "onBlur", "onFocus", "onChange", "onChangeText", "onInput"],

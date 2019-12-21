@@ -2,7 +2,7 @@
   "name": "rax-helper",
   "displayName": "Rax-helper",
   "description": "Visual Studio Code plugin for Rax.js",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "sirm2z",
   "repository": {
     "type": "git",

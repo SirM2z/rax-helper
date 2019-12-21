@@ -1,5 +1,6 @@
 {
   "style": {"type": "object", "description": "样式对象", "global": true},
+  "className": {"description": "类名", "global": true},
 
   "Text/numberOfLines": {"description": "文本行数"},
 
@@ -10,6 +11,7 @@
   "View/onTouchMove": {"type": "method", "description": "手指在组件上移动时触发的事件 type: Function"},
   "View/onTouchEnd": {"type": "method", "description": "触摸动作结束时触发的事件 type: Function"},
   "View/onTouchCancel": {"type": "method", "description": "触摸动作被打断，如来电提醒，弹窗 type: Function"},
+  "View/onClick": {"type": "method", "description": "点击事件 type: Function"},
 
   "TextInput/multiline": {"type": "boolean", "description": "定义该属性文本框可以输入多行文字"},
   "TextInput/accessibilityLabel": {"description": "为元素添加标识"},
